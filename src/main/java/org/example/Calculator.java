@@ -91,7 +91,11 @@ public class Calculator {
             } else if (Arrays.asList(rightSymbols).contains(buttonValue)) {
                 button.setBackground(customOrange);
                 button.setForeground(Color.white);
+            }else {
+                button.setBackground(customDarkGray);
+                button.setForeground(Color.white);
             }
+            buttonsPanel.add(button);
 
 
 
