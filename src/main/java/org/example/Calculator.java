@@ -24,6 +24,7 @@ public class Calculator {
     Color customBlack = new Color(28, 28, 28);
     Color customOrange = new Color(255, 149, 0);
 
+    // Add button layout and symbol groups
     String[] buttonValues = {
             "AC", "+/-", "%", "÷",
             "7", "8", "9", "×",
