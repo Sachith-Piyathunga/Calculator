@@ -75,6 +75,15 @@ public class Calculator {
         buttonsPanel.setBackground(customBlack);
         frame.add(buttonsPanel);
 
+        // Create and configure each button
+        for (int i = 0; i < buttonValues.length; i++) {
+            JButton button = new JButton();
+            String buttonValue = buttonValues[i];
+            button.setFont(new Font("Arial", Font.PLAIN, 30));
+            button.setText(buttonValue);
+            button.setFocusable(false);
+            button.setBorder(new LineBorder(customBlack));
+
 
 
 
