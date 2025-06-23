@@ -136,9 +136,28 @@ public class Calculator {
                             }
                         }
 
+                        // Handle special symbols (AC, %, +/-)
+                        else if (Arrays.asList(topSymbols).contains(buttonValue)) {
+                            if (buttonValue == "AC") {
+                                clearAll();
+                                displayLabel.setText("0");
+                            }
+                            else if (buttonValue == "+/-") {
+                                double numDisplay = Double.parseDouble(displayLabel.getText());
+                                numDisplay *= -1;
+                                displayLabel.setText(removeZeroDecimal(numDisplay));
+                            }
+                            else if (buttonValue == "%") {
+                                double numDisplay = Double.parseDouble(displayLabel.getText());
+                                numDisplay /= 100;
+                                displayLabel.setText(removeZeroDecimal(numDisplay));
+                            }
+                        }
 
 
 
-    }
+
+
+                    }
 
 }
