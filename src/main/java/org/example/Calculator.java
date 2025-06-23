@@ -125,6 +125,17 @@ public class Calculator {
                                 clearAll(); // Reset after evaluation
                             }
 
+                            // Store operand and operator
+                            else if ("+-×÷".contains(buttonValue)) {
+                                if (operator == null) {
+                                    A = displayLabel.getText();
+                                    displayLabel.setText("0");
+                                    B = "0";
+                                }
+                                operator = buttonValue;
+                            }
+                        }
+
 
 
 
