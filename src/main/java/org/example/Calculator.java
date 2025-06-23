@@ -12,6 +12,8 @@ import javax.swing.border.LineBorder;
  * Displays results with formatting and responsive button layout.
  */
 public class Calculator {
+
+    // Set window size
     int boardWidth = 360;
     int boardHeight = 540;
 
