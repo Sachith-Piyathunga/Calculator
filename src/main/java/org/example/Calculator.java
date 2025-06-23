@@ -45,4 +45,20 @@ public class Calculator {
     String A = "0";
     String operator = null;
     String B = null;
+
+    /**
+     * Constructor that initializes the calculator UI and logic.
+     */
+    Calculator() {
+        // Set up main frame
+        frame.setSize(boardWidth, boardHeight);
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+
+
+
+    }
+
 }
