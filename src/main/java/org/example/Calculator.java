@@ -175,6 +175,18 @@ public class Calculator {
 
                 // Make frame visible after all components are added
                 frame.setVisible(true);
+            }
+
+        }
+
+        /**
+         * Resets calculator state after calculation or AC.
+         */
+        void clearAll() {
+            A = "0";
+            operator = null;
+            B = null;
+        }
 
 
 
