@@ -188,11 +188,16 @@ public class Calculator {
             B = null;
         }
 
-
-
-
-
-
-                    }
+        /**
+         * Utility method to clean up decimal display:
+         * Removes trailing .0 if number is whole (e.g., 4.0 ➝ 4)
+         */
+        String removeZeroDecimal(double numDisplay) {
+            if (numDisplay % 1 == 0) {
+                return Integer.toString((int) numDisplay);
+            }
+            return Double.toString(numDisplay);
+        }
+    }
 
 }
