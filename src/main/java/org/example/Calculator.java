@@ -17,6 +17,8 @@ public class Calculator {
     int boardWidth = 360;
     int boardHeight = 540;
 
+    // Set custom color theme for buttons and UI
+
     Color customLightGray = new Color(212, 212, 210);
     Color customDarkGray = new Color(80, 80, 80);
     Color customBlack = new Color(28, 28, 28);
