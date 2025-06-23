@@ -173,6 +173,10 @@ public class Calculator {
                     }
                 });
 
+                // Make frame visible after all components are added
+                frame.setVisible(true);
+
+
 
 
 
