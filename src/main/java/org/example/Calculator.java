@@ -49,7 +49,7 @@ public class Calculator {
     /**
      * Constructor that initializes the calculator UI and logic.
      */
-    Calculator() {
+    public Calculator() {
         // Set up main frame
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null);
@@ -156,7 +156,7 @@ public class Calculator {
 
                         // Handle numbers and dot
                         else {
-                            if (buttonValue == ".") {
+                            if (buttonValue.equals("=")) {
                                 if (!displayLabel.getText().contains(buttonValue)) {
                                     displayLabel.setText(displayLabel.getText() + buttonValue);
                                 }
@@ -172,12 +172,11 @@ public class Calculator {
                         }
                     }
                 });
-
+            }
                 // Make frame visible after all components are added
                 frame.setVisible(true);
-            }
-
         }
+    }
 
         /**
          * Resets calculator state after calculation or AC.
@@ -198,6 +197,6 @@ public class Calculator {
             }
             return Double.toString(numDisplay);
         }
-    }
+
 
 }
