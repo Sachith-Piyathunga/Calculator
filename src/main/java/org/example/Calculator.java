@@ -84,6 +84,12 @@ public class Calculator {
             button.setFocusable(false);
             button.setBorder(new LineBorder(customBlack));
 
+            // Color styling for symbol group
+            if (Arrays.asList(topSymbols).contains(buttonValue)) {
+                button.setBackground(customLightGray);
+                button.setForeground(customBlack);
+            }
+
 
 
 
