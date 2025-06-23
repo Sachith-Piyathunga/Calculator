@@ -40,4 +40,9 @@ public class Calculator {
     JLabel displayLabel = new JLabel();
     JPanel displayPanel = new JPanel();
     JPanel buttonsPanel = new JPanel();
+
+    // Set variables to store operands and operator
+    String A = "0";
+    String operator = null;
+    String B = null;
 }
