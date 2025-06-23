@@ -109,6 +109,22 @@ public class Calculator {
                                 double numA = Double.parseDouble(A);
                                 double numB = Double.parseDouble(B);
 
+                                // Perform selected operation
+                                if (operator == "+") {
+                                    displayLabel.setText(removeZeroDecimal(numA+numB));
+                                }
+                                else if (operator == "-") {
+                                    displayLabel.setText(removeZeroDecimal(numA-numB));
+                                }
+                                else if (operator == "×") {
+                                    displayLabel.setText(removeZeroDecimal(numA*numB));
+                                }
+                                else if (operator == "÷") {
+                                    displayLabel.setText(removeZeroDecimal(numA/numB));
+                                }
+                                clearAll(); // Reset after evaluation
+                            }
+
 
 
 
