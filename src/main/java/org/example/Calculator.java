@@ -33,7 +33,8 @@ public class Calculator {
 
     String A = null;
     String operator = null;
-    boolean startNewNumber = true;
+    boolean waitingForSecondOperand = false;
+    boolean justEvaluated = false;
 
     public Calculator() {
         frame.setSize(boardWidth, boardHeight);
@@ -76,59 +77,84 @@ public class Calculator {
 
             button.addActionListener(e -> {
                 String value = button.getText();
+                String currentDisplay = displayLabel.getText();
 
                 if ("0123456789".contains(value)) {
-                    if (startNewNumber || displayLabel.getText().equals("0")) {
+                    if (currentDisplay.equals("0") || waitingForSecondOperand || justEvaluated) {
                         displayLabel.setText(value);
+                        waitingForSecondOperand = false;
+                        justEvaluated = false;
                     } else {
-                        displayLabel.setText(displayLabel.getText() + value);
+                        displayLabel.setText(currentDisplay + value);
                     }
-                    startNewNumber = false;
                 } else if (value.equals(".")) {
-                    if (!displayLabel.getText().contains(".")) {
-                        displayLabel.setText(displayLabel.getText() + ".");
-                        startNewNumber = false;
+                    if (justEvaluated || waitingForSecondOperand) {
+                        displayLabel.setText("0.");
+                        waitingForSecondOperand = false;
+                        justEvaluated = false;
+                    } else if (!currentDisplay.contains(".")) {
+                        displayLabel.setText(currentDisplay + ".");
                     }
                 } else if (value.equals("AC")) {
                     clearAll();
                     displayLabel.setText("0");
                 } else if (value.equals("+/-")) {
-                    double current = Double.parseDouble(displayLabel.getText());
+                    double current = Double.parseDouble(currentDisplay);
                     current *= -1;
                     displayLabel.setText(removeZeroDecimal(current));
                 } else if (value.equals("√")) {
-                    double current = Double.parseDouble(displayLabel.getText());
+                    double current = Double.parseDouble(currentDisplay);
                     if (current >= 0) {
                         displayLabel.setText(removeZeroDecimal(Math.sqrt(current)));
-                        startNewNumber = true;
+                        justEvaluated = true;
                     }
                 } else if (value.equals("%")) {
-                    double current = Double.parseDouble(displayLabel.getText());
-                    current = current / 100;
+                    double current = Double.parseDouble(currentDisplay);
+                    current /= 100;
                     displayLabel.setText(removeZeroDecimal(current));
-                } else if (Arrays.asList(rightSymbols).contains(value)) {
-                    if (value.equals("=")) {
-                        if (A != null && operator != null && !startNewNumber) {
-                            double numA = Double.parseDouble(A);
-                            double numB = Double.parseDouble(displayLabel.getText());
-                            double result = 0;
+                    justEvaluated = true;
+                } else if (value.equals("=")) {
+                    // Handle equals button
+                    if (A != null && operator != null && !waitingForSecondOperand) {
+                        double numA = Double.parseDouble(A);
+                        double numB = Double.parseDouble(currentDisplay);
+                        double result = 0;
 
-                            switch (operator) {
-                                case "+" -> result = numA + numB;
-                                case "-" -> result = numA - numB;
-                                case "×" -> result = numA * numB;
-                                case "÷" -> result = numB == 0 ? 0 : numA / numB;
-                            }
-
-                            displayLabel.setText(removeZeroDecimal(result));
-                            clearAll();
-                            startNewNumber = true;
+                        switch (operator) {
+                            case "+" -> result = numA + numB;
+                            case "-" -> result = numA - numB;
+                            case "×" -> result = numA * numB;
+                            case "÷" -> result = numB == 0 ? 0 : numA / numB;
                         }
-                    } else {
-                        A = displayLabel.getText();
-                        operator = value;
-                        startNewNumber = true;
+
+                        displayLabel.setText(removeZeroDecimal(result));
+                        clearAll(); // Reset all except current display
+                        justEvaluated = true;
                     }
+                } else if (Arrays.asList(new String[]{"÷", "×", "-", "+"}).contains(value)) {
+                    // Handle operator buttons
+                    if (A != null && operator != null && !waitingForSecondOperand) {
+                        // Chain operations: calculate previous operation first
+                        double numA = Double.parseDouble(A);
+                        double numB = Double.parseDouble(currentDisplay);
+                        double result = 0;
+
+                        switch (operator) {
+                            case "+" -> result = numA + numB;
+                            case "-" -> result = numA - numB;
+                            case "×" -> result = numA * numB;
+                            case "÷" -> result = numB == 0 ? 0 : numA / numB;
+                        }
+
+                        displayLabel.setText(removeZeroDecimal(result));
+                        A = removeZeroDecimal(result);
+                    } else {
+                        A = currentDisplay;
+                    }
+
+                    operator = value;
+                    waitingForSecondOperand = true;
+                    justEvaluated = false;
                 }
             });
 
@@ -141,7 +167,8 @@ public class Calculator {
     void clearAll() {
         A = null;
         operator = null;
-        startNewNumber = true;
+        waitingForSecondOperand = false;
+        justEvaluated = false;
     }
 
     String removeZeroDecimal(double numDisplay) {
