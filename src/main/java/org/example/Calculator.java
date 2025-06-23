@@ -103,27 +103,27 @@ public class Calculator {
                     JButton button = (JButton) e.getSource();
                     String buttonValue = button.getText();
                     if (Arrays.asList(rightSymbols).contains(buttonValue)) {
-                        if (buttonValue == "=") {
+                        if (buttonValue.equals("=")) {
                             if (A != null) {
                                 B = displayLabel.getText();
                                 double numA = Double.parseDouble(A);
                                 double numB = Double.parseDouble(B);
 
                                 // Perform selected operation
-                                if (operator == "+") {
+                                if (operator.equals("+")) {
                                     displayLabel.setText(removeZeroDecimal(numA + numB));
-                                } else if (operator == "-") {
+                                } else if (operator.equals("-")) {
                                     displayLabel.setText(removeZeroDecimal(numA - numB));
-                                } else if (operator == "×") {
+                                } else if (operator.equals("×")) {
                                     displayLabel.setText(removeZeroDecimal(numA * numB));
-                                } else if (operator == "÷") {
+                                } else if (operator.equals("÷")) {
                                     displayLabel.setText(removeZeroDecimal(numA / numB));
                                 }
                                 clearAll(); // Reset after evaluation
                             }
 
                             // Store operand and operator
-                            else if ("+-×÷".contains(buttonValue)) {
+                            else if (Arrays.asList(rightSymbols).contains(buttonValue)) {
                                 if (operator == null) {
                                     A = displayLabel.getText();
                                     displayLabel.setText("0");
@@ -135,14 +135,14 @@ public class Calculator {
 
                         // Handle special symbols (AC, %, +/-)
                         else if (Arrays.asList(topSymbols).contains(buttonValue)) {
-                            if (buttonValue == "AC") {
+                            if (buttonValue.equals("AC")) {
                                 clearAll();
                                 displayLabel.setText("0");
-                            } else if (buttonValue == "+/-") {
+                            } else if (buttonValue.equals("+/-")) {
                                 double numDisplay = Double.parseDouble(displayLabel.getText());
                                 numDisplay *= -1;
                                 displayLabel.setText(removeZeroDecimal(numDisplay));
-                            } else if (buttonValue == "%") {
+                            } else if (buttonValue.equals("%")) {
                                 double numDisplay = Double.parseDouble(displayLabel.getText());
                                 numDisplay /= 100;
                                 displayLabel.setText(removeZeroDecimal(numDisplay));
