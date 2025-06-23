@@ -34,4 +34,10 @@ public class Calculator {
     };
     String[] rightSymbols = {"÷", "×", "-", "+", "="};
     String[] topSymbols = {"AC", "+/-", "%"};
+
+    // Set UI Components
+    JFrame frame = new JFrame("Calculator");
+    JLabel displayLabel = new JLabel();
+    JPanel displayPanel = new JPanel();
+    JPanel buttonsPanel = new JPanel();
 }
