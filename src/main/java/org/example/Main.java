@@ -1,8 +1,7 @@
 package org.example;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        Calculator calculator = new Calculator();
-
+    public static void main(String[] args) {
+        new Calculator(); // Launch the calculator UI
     }
 }
