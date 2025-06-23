@@ -6,7 +6,11 @@ import java.util.Arrays;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-
+/**
+ * A fully functional GUI calculator built using Java Swing.
+ * Supports basic arithmetic operations, percentage, sign toggle, and square root.
+ * Displays results with formatting and responsive button layout.
+ */
 public class Calculator {
     int boardWidth = 360;
     int boardHeight = 540;
