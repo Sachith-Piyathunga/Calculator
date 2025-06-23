@@ -65,6 +65,11 @@ public class Calculator {
         displayLabel.setText("0");
         displayLabel.setOpaque(true);
 
+        // Display panel setup
+        displayPanel.setLayout(new BorderLayout());
+        displayPanel.add(displayLabel);
+        frame.add(displayPanel, BorderLayout.NORTH);
+
 
 
     }
