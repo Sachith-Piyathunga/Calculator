@@ -32,4 +32,6 @@ public class Calculator {
             "1", "2", "3", "+",
             "0", ".", "√", "="
     };
+    String[] rightSymbols = {"÷", "×", "-", "+", "="};
+    String[] topSymbols = {"AC", "+/-", "%"};
 }
