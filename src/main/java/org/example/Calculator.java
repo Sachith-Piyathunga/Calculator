@@ -91,7 +91,7 @@ public class Calculator {
             } else if (Arrays.asList(rightSymbols).contains(buttonValue)) {
                 button.setBackground(customOrange);
                 button.setForeground(Color.white);
-            }else {
+            } else {
                 button.setBackground(customDarkGray);
                 button.setForeground(Color.white);
             }
@@ -111,16 +111,13 @@ public class Calculator {
 
                                 // Perform selected operation
                                 if (operator == "+") {
-                                    displayLabel.setText(removeZeroDecimal(numA+numB));
-                                }
-                                else if (operator == "-") {
-                                    displayLabel.setText(removeZeroDecimal(numA-numB));
-                                }
-                                else if (operator == "×") {
-                                    displayLabel.setText(removeZeroDecimal(numA*numB));
-                                }
-                                else if (operator == "÷") {
-                                    displayLabel.setText(removeZeroDecimal(numA/numB));
+                                    displayLabel.setText(removeZeroDecimal(numA + numB));
+                                } else if (operator == "-") {
+                                    displayLabel.setText(removeZeroDecimal(numA - numB));
+                                } else if (operator == "×") {
+                                    displayLabel.setText(removeZeroDecimal(numA * numB));
+                                } else if (operator == "÷") {
+                                    displayLabel.setText(removeZeroDecimal(numA / numB));
                                 }
                                 clearAll(); // Reset after evaluation
                             }
@@ -141,13 +138,11 @@ public class Calculator {
                             if (buttonValue == "AC") {
                                 clearAll();
                                 displayLabel.setText("0");
-                            }
-                            else if (buttonValue == "+/-") {
+                            } else if (buttonValue == "+/-") {
                                 double numDisplay = Double.parseDouble(displayLabel.getText());
                                 numDisplay *= -1;
                                 displayLabel.setText(removeZeroDecimal(numDisplay));
-                            }
-                            else if (buttonValue == "%") {
+                            } else if (buttonValue == "%") {
                                 double numDisplay = Double.parseDouble(displayLabel.getText());
                                 numDisplay /= 100;
                                 displayLabel.setText(removeZeroDecimal(numDisplay));
@@ -160,22 +155,20 @@ public class Calculator {
                                 if (!displayLabel.getText().contains(buttonValue)) {
                                     displayLabel.setText(displayLabel.getText() + buttonValue);
                                 }
-                            }
-                            else if ("0123456789".contains(buttonValue)) {
+                            } else if ("0123456789".contains(buttonValue)) {
                                 if (displayLabel.getText() == "0") {
                                     displayLabel.setText(buttonValue);
-                                }
-                                else {
+                                } else {
                                     displayLabel.setText(displayLabel.getText() + buttonValue);
                                 }
                             }
                         }
                     }
                 }
-            }
-                // Make frame visible after all components are added
-                frame.setVisible(true);
+            });
         }
+        // Make frame visible after all components are added
+        frame.setVisible(true);
     }
 
         /**
