@@ -96,3 +96,7 @@ src/
 - Lite Mode
 
 ![image](https://github.com/Sachith-Piyathunga/Calculator/blob/31d8308563b04cd28ea8e7b58b929e6d04125f8b/Screenshots/Screenshot_20250624_060806.png)
+
+---
+
+## ⭐ If you like this project, feel free to star it and follow for updates!
