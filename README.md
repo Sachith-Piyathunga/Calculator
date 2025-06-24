@@ -65,3 +65,16 @@ src/
   - Keyboard adapter maps key presses to equivalent button logic
 
 ---
+
+## 🎨 Theme Design
+
+| Light Mode | Dark Mode |
+|------------|-----------|
+| Bright background, black text | Dark background, white text |
+| Soft light buttons | Muted dark buttons |
+| Green accent for operators | Consistent in both themes |
+| 🌓 Theme toggle icon | 🌙 (light) ↔ ☀️ (dark) |
+
+> The theme switch is immediate and updates **all** UI components, including panels, buttons, and display.
+
+---
