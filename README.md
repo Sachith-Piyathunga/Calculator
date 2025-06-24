@@ -75,6 +75,12 @@ src/
 | Green accent for operators | Consistent in both themes |
 | 🌓 Theme toggle icon | 🌙 (light) ↔ ☀️ (dark) |
 
-> The theme switch is immediate and updates **all** UI components, including panels, buttons, and display.
-
 ---
+
+## 🛠️ How to Run
+
+- Simply run Main.java from your IDE.
+  
+### 🖥️ Requirements
+- Java 17 or later
+- IDE like IntelliJ, Eclipse, or NetBeans (or use terminal)
