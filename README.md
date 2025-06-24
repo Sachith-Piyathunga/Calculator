@@ -38,3 +38,11 @@ The UI is divided into two main sections:
 > Responsive layout using `BorderLayout` and `GridLayout` ensures consistent alignment across different screen sizes.
 
 ---
+
+## 📁 Project Structure
+
+```
+src/
+└── org.example/
+├── Main.java # Entry point to launch the calculator
+└── Calculator.java # Contains all logic, layout, and event handling
