@@ -9,3 +9,18 @@
 - The **Calculator** provides a robust alternative to simple calculator apps. With built-in keyboard shortcuts, real-time UI updates, and a polished design, it's ideal for both casual use and demonstrating GUI design and event-driven programming skills in Java.
 
 ---
+
+## ✨ Features
+
+| Category | Description |
+|----------|-------------|
+| 🧮 Basic Operations | Addition `+`, Subtraction `-`, Multiplication `×`, Division `÷` |
+| 🧠 Advanced Functions | Percentage `%`, Square Root `√`, Toggle Sign `+/-`, Decimal Point `.` |
+| 💡 UI Themes | Toggle between **Light** and **Dark** mode via button or `F1` key |
+| ⌨️ Keyboard Support | Perform calculations using keyboard shortcuts |
+| 🕒 Calculation History | View your last 20 calculations in a scrollable side panel |
+| 🧹 Clear Controls | Clear all input with `AC` or `ESC`, clear history with one button |
+| 🔙 Backspace | Use `Backspace` key to remove the last digit |
+| 🪄 Auto Formatting | Removes unnecessary `.0` (e.g., `5.0` ➜ `5`) for clean display |
+
+---
