@@ -46,3 +46,22 @@ src/
 └── org.example/
 ├── Main.java # Entry point to launch the calculator
 └── Calculator.java # Contains all logic, layout, and event handling
+```
+
+---
+
+## 🧠 Calculator Logic
+
+- **State Tracking Variables**
+  - `A`: First operand
+  - `operator`: Selected operation
+  - `waitingForSecondOperand`: Ensures the second input isn't concatenated incorrectly
+  - `justEvaluated`: Prevents repeated equals and manages history input
+  - `currentExpression`: Full math expression string for history
+
+- **Execution Flow**
+  - Button press → input handler → display update → optional history logging
+  - Theme toggle applies new color scheme using the `updateTheme()` method
+  - Keyboard adapter maps key presses to equivalent button logic
+
+---
