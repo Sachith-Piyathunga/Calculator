@@ -24,3 +24,17 @@
 | 🪄 Auto Formatting | Removes unnecessary `.0` (e.g., `5.0` ➜ `5`) for clean display |
 
 ---
+
+## 🖼️ User Interface Structure
+
+The UI is divided into two main sections:
+
+- **Left Panel:**  
+  Contains the display, keypad (with 20 buttons), and theme toggle.
+  
+- **Right Panel:**  
+  Scrollable history log with a clear button, styled separately for easy visibility.
+
+> Responsive layout using `BorderLayout` and `GridLayout` ensures consistent alignment across different screen sizes.
+
+---
